@@ -7,12 +7,12 @@ This is an addon starter mobile application template using the [Ionic Framework]
 Pull this code into an empty directory.
 ```bash
 $ sudo npm install -g ionic cordova gulp express nodemon
-$ npm install
+$ npm install [do sudo if you get EACESS errors]
 $ bower install
-$ cd /server
+$ cd server
 $ node server.js
 ```
-Unless you have a PORT environment variable set, you'll find your app sitting at ````localhost:3030````
+Unless you have a PORT environment variable set, you'll find your app sitting at ````http://localhost:3030/````
 
 ## Updating Ionic
 
