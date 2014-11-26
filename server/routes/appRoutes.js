@@ -5,6 +5,7 @@ var passportLocal = require('passport-local');
 var cookieParser = require('cookie-parser');
 var sessionParser = require('express-session');
 
+
 module.exports = function(app) {
     app.use(cookieParser());
     app.use(sessionParser({
