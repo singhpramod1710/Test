@@ -4,6 +4,7 @@ var passport = require('passport');
 var cookieParser = require('cookie-parser');
 var sessionParser = require('express-session');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 /**########## App ################**/
 var app = express();
@@ -35,6 +36,7 @@ app.use(express.static(__dirname + '/../www'));
 
 /**##########Internal modules ################**/
 var db = require('./config/db.js'); // for the db config, this is ignored by git
+mongoose.connect(db.url);
 require('./config/passport.js')(passport);
 require('./routes/appRoutes.js')(app, passport);
 require('./routes/pathRoutes.js')(app);
