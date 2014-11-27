@@ -1,21 +1,15 @@
-// external modules
+/**########## External Modules ################**/ // external modules
 var express = require('express');
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
 var sessionParser = require('express-session');
 var bodyParser = require('body-parser');
 
-//App
+/**########## App ################**/
 var app = express();
 var port = process.env.PORT || 3030; // set port with $PORT environment variable
 
-// internal modules
-var db = require('./config/db.js'); // for the db config, this is ignored by git
-require('./config/passport.js')(passport);
-require('./routes/appRoutes.js')(app, passport);
-require('./routes/pathRoutes.js')(app);
-
-//App Configs
+/**########## App Configurations ################**/
 app.use(cookieParser());
 app.use(sessionParser({
     secret: process.env.SESSION_SECRET || 'secret',
@@ -39,5 +33,11 @@ app.set('view engine', 'ejs');
 app.listen(port);
 app.use(express.static(__dirname + '/../www'));
 
+/**##########Internal modules ################**/
+var db = require('./config/db.js'); // for the db config, this is ignored by git
+require('./config/passport.js')(passport);
+require('./routes/appRoutes.js')(app, passport);
+require('./routes/pathRoutes.js')(app);
+
 module.exports = app;
-console.log('now serving on port: ', port);
+console.log('Now serving on port: ', port);

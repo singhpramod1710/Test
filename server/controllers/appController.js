@@ -21,8 +21,8 @@ module.exports = {
     logintest: function(req, res) {
         console.log('Inside appController | logintest');
         console.log('URL : ' + req.url);
-        console.log('session User : ' + req.session.passport.user);
-        if (req.session.passport.user)
+        //console.log('session User : ' + req.session.passport.user);
+        if (req.isAuthenticated())
             res.redirect('/');
         else
             res.redirect('/#/login');
