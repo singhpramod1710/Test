@@ -61,4 +61,5 @@ module.exports = function(app) {
     //ROUTES defined
     app.post('/api/signin', passport.authenticate('local-login'), appController.signin);
     app.get('/', appController.index);
+    app.get('/logintest', appController.logintest);
 };

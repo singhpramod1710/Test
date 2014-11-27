@@ -5,6 +5,7 @@ var express  = require('express');
 var db       = require('./config/db.js'); // for the db config, this is ignored by git
 
 var app = express();
+app.set('view engine', 'ejs');
 var port =  process.env.PORT || 3030; // set port with $PORT environment variable
 var bodyParser = require('body-parser');
 // get all data/stuff of the body (POST) parameters
