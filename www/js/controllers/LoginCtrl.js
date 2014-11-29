@@ -1,4 +1,4 @@
-controllers.controller('LoginCtrl', function($scope,$state,LoginServices) {
+controllers.controller('LoginCtrl', ['$scope','$state','LoginServices',function($scope,$state,LoginServices) {
     console.log('hello from login ctrl');
     $scope.processClick = function(user) {
         var loginResult = LoginServices.LoginServices();
@@ -16,4 +16,4 @@ controllers.controller('LoginCtrl', function($scope,$state,LoginServices) {
         console.log(user.password);
         LoginServices.login(user).then(success, error);
     };
-});
+}]);

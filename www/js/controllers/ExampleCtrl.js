@@ -1,8 +1,8 @@
-controllers.controller('ExampleCtrl',function($scope, ExampleServices) {
+controllers.controller('ExampleCtrl',['$scope','ExampleServices',function($scope, ExampleServices) {
 
-  var exampleResult = ExampleServices.exampleService()
-  console.log(exampleResult)  
+  var exampleResult = ExampleServices.exampleService();
+  console.log(exampleResult);
 
   // for ng-repeat
   $scope.exampleList = ['one', 'two', 'three'];
-});
+}]);
