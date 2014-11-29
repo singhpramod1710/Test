@@ -1,8 +1,8 @@
 services.service('ExampleServices', function($http, $q) {
 
-  return {
-    exampleService: function(){
-      return "example"
-    }
-  };
+    return {
+        exampleService: function() {
+            return "example";
+        }
+    };
 });
